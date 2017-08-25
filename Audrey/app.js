@@ -33,7 +33,7 @@ $(".CreateDB").on("click", function (event) {
 
 // Firebase Auth
 
-// Google Auth
+// Email/Password Auth
 
 $(".signup").on("click", function (event) {
 
@@ -49,32 +49,32 @@ $(".signup").on("click", function (event) {
     // Taking firebase built in function and storing it in the user variable
     var user = firebase.auth().createUserWithEmailAndPassword(email, password);
 
-        user
-            .then(function(data) {
+    user
+        .then(function (data) {
 
-                // Parding through data returned
-                console.log(data.email);
-                console.log(data.uid);
+            // Parsing through data returned
+            console.log(data.email);
+            console.log(data.uid);
 
-                // Naming our database "userDB"
-                var userDB = db.ref("userDB");
+            // Naming our database "userDB"
+            var userDB = db.ref("userDB");
 
-                // Storing your information in a JSON object
-                var userDBObject = {
-                    email: data.email,
-                    userID: data.uid
-                }
+            // Storing your information in a JSON object
+            var userDBObject = {
+                email: data.email,
+                userID: data.uid
+            }
 
-                // Pushing JSON object into DB named "userDB"
-                userDB.push(userDBObject)
+            // Pushing JSON object into DB named "userDB"
+            userDB.push(userDBObject)
 
-            })
+        })
 
-            // catching any errors
-            .catch(function(error) {
+        // catching any errors
+        .catch(function (error) {
             console.log(error.code);
             alert(error.message);
-    });
+        });
 
     console.log("this was a click")
 
@@ -100,9 +100,9 @@ alerts("this is another alert")
 var form = function (first, last) {
 
     var form = $("<form>");
-        firstnameInput = $("<input>")
-        firstname = $("<label>")
-        firstname.text(first);
+    firstnameInput = $("<input>")
+    firstname = $("<label>")
+    firstname.text(first);
 
     var lastnameInput = $("<input>")
     lastname = $("<label>")
