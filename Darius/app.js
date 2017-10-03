@@ -47,14 +47,7 @@ var JohnMethod = new charactersMethod("John", "Smith", 40, 120)
 
 console.log(JohnMethod.fullname());
 
-// Express
-// Handlebars
 
-var express = require("express")
-
-app.get("/home", function (req, res) {
-    res.render()
-})
 
 
 

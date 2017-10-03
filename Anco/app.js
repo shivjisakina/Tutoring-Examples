@@ -3,7 +3,6 @@ console.log("hello world");
 // 9-12-2017
 
 var Name = function (first, last) {
-    console.log(this)
     this.firstname = first;
     this.lastname = last
 }
