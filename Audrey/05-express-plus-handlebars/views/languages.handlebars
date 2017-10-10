@@ -1,0 +1,18 @@
+<h1>This is the coding languages route</h1>
+
+{{languages.Name}}
+
+{{#each languages}}
+
+    <h1>Name: {{this.Name}} </h1>
+    <h1>Type: {{this.Type}} </h1>
+
+    {{#if enjoy}}
+        <h4>I enjoy {{this.Name}}</h4>
+
+    {{else}}
+        <h4>I dont enjoy {{this.Name}}</h4>
+
+    {{/if}}
+
+{{/each}}
